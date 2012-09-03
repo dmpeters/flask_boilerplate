@@ -28,8 +28,7 @@ def init():
 	commit = prompt("Git Commit Message: ").lower()
 	local("git commit -am {commit}")
 	origin = prompt("Add Origin: ").lower()
-	local("git origin add {origin} && git push -u origin master")
-
+	local("git remote add origin {origin} && git push -u origin master")
 
 '''
 TODO: Fabric task for api
