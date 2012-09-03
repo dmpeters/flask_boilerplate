@@ -7,12 +7,12 @@ def init():
 	# Touch README
 	local('rm README.md')
 	readme = prompt('Enter breif description for README: ').lower()
-	local('echo "{}" > README.md'.format(readme))
+	local('echo "%s" > README.md' % (readme))
 	
 	# Set Up App
 	app_name = prompt("Enter App Name: ").lower()
-	local("mkdir -p {}/{api,resources,services,tasks}".format(app_name))
-	local("cd {} && for DIR in $(find . -type d); do touch $DIR/__init__.py; done".format(app_name))
+	local("mkdir -p %s/{api,resources,services,tasks}" % (app_name))
+	local("cd %s && for DIR in $(find . -type d); do touch $DIR/__init__.py; done" % (app_name))
 	
 	# Set Up Static Media
 	media = prompt("Setup Static Media (Y/N): ")
@@ -26,9 +26,9 @@ def init():
 	# Setup Git
 	local("rm -rf .git/ && git init && git add .")
 	commit = prompt("Git Commit Message: ").lower()
-	local("git commit -am {}".format(commit))
+	local("git commit -am %s" % (commit))
 	origin = prompt("Add Origin: ")
-	local("git remote add origin {} && git push -u origin master".format(origin))
+	local("git remote add origin %s && git push -u origin master" % (origin))
 
 
 @task
