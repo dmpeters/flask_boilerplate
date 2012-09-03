@@ -18,7 +18,7 @@ def init():
 	media = prompt("Setup Static Media (Y/N): ")
 	if(media == "Y"):
 		local("mkdir -p public/{css,js,img}")
-		local("mkdir -p public/css/src && public/js/lib")
+		local("mkdir -p public/css/src && mkdir -p public/js/lib")
 		local("cd public && for DIR in $(find . -type d); do touch $DIR/empty; done")
 	else:
 		pass
