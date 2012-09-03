@@ -27,7 +27,7 @@ def init():
 	local("rm -rf .git/ && git init && git add .")
 	commit = prompt("Git Commit Message: ").lower()
 	local("git commit -am {commit}")
-	origin = prompt("Add Origin: ").lower()
+	origin = prompt("Add Origin: ")
 	local("git remote add origin {origin} && git push -u origin master")
 
 '''
