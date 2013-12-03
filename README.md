@@ -1,6 +1,6 @@
 # Flask Boilerplate
 
-This was create to stream line setting up Flask applications up
+A keep it simple stupid (kiss) boilerplate I use when setting up Flask a applications.
 
 
 ## Instructions
